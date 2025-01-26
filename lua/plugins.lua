@@ -14,7 +14,6 @@ use 'tpope/vim-surround'
 use 'tpope/vim-repeat' -- https://github.com/tpope/vim-repeat
 use 'wellle/targets.vim' -- https://github.com/wellle/targets.vim
 use 'tpope/vim-unimpaired' -- https://github.com/tpope/vim-unimpaired
-use 'Yggdroot/indentLine' -- https://github.com/Yggdroot/indentLine
+use {'Yggdroot/indentLine', ft = {'python', 'lua'}} -- https://github.com/Yggdroot/indentLine
 -- use 'FooSoft/vim-argwrap' -- Toggle arguments
-
 -- use {'chrisbra/csv.vim', ft = {'csv'}}

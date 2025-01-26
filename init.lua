@@ -14,6 +14,9 @@ vim.opt.mouse = 'a' -- allow the mouse to be used in neovim
 
 -- UI
 -- vim.opt.showtabline = 2
+vim.o.ls = 0 -- last status
+-- vim.o.ch = 0 -- command height
+-- vim.o.winbar = "%f"
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.showmode = false
 vim.opt.wrap = true -- display lines as one long line
@@ -30,7 +33,12 @@ vim.g.mapleader = ' '
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false
+vim.opt.guifont = "monospace:h17"
+vim.keymap.set('n', '<leader>fa', function()
+    local api = vim.api
+    local current_window = api.nvim_get_current_win()
+    api.nvim_win_set_option(current_window, 'foldenable', true)
+end)
 
--- require('config/*')
 require('plugins')
 

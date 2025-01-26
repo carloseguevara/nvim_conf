@@ -9,10 +9,22 @@ use 'folke/tokyonight.nvim' -- https://github.com/folke/tokyonight.nvim
 -- Configurations
 require("nightfox").setup({
     options = {
-        styles = {comments = "italic", keywords = "bold", types = "italic,bold"}
+        styles = { comments = "italic", keywords = "bold", types = "italic,bold" }
     }
 })
+require("tokyonight").setup({
+    styles = {
+        comments = { italic = true },
+        keywords = { italic = true, bold = true },
+        functions = { italic = true },
+        variables = { italic = true },
+        -- Background styles. Can be "dark", "transparent" or "normal"
+        sidebars = "dark", -- style for sidebars, see below
+        floats = "transparent", -- style for floating windows
+    },
+})
 
+vim.cmd [[colorscheme tokyonight]]
 -- local current_time = os.date("*t")
 -- local current_hour = current_time.hour
 -- if current_hour > 6 and current_hour < 19 then
@@ -24,13 +36,13 @@ require("nightfox").setup({
 --     vim.cmd("colorscheme nightfox")
 -- end
 
-local command = 'defaults read -g AppleInterfaceStyle'
-local handle = io.popen(command)
-local result = handle:read("*a")
-handle:close()
+-- local command = 'defaults read -g AppleInterfaceStyle'
+-- local handle = io.popen(command)
+-- local result = handle:read("*a")
+-- handle:close()
 
-if result:sub(1, -2) == "Dark" then
-    vim.cmd("colorscheme nightfox")
-else
-    vim.cmd("colorscheme dayfox")
-end
+-- if result:sub(1, -2) == "Dark" then
+--     vim.cmd("colorscheme nightfox")
+-- else
+--     vim.cmd("colorscheme dayfox")
+-- end

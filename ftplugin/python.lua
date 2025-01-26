@@ -1,5 +1,5 @@
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = '*.py',
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = 'python',
     callback = function()
         vim.opt.tabstop = 4
         vim.opt.shiftwidth = 4

@@ -1,11 +1,10 @@
 -- Treesitter --
 local packer = require 'packer'
 local use = packer.use
-
 -- Plugins
 use "nvim-treesitter/nvim-treesitter"
+-- use "nvim-treesitter/nvim-treesitter-context"
 -- use "eddiebergman/nvim-treesitter-pyfold"
-
 -- Configurations
 require("nvim-treesitter.configs").setup({
     indent = {enable = true},
@@ -27,3 +26,5 @@ require("nvim-treesitter.configs").setup({
     --   custom_foldtext = true -- Sets provided foldtext on window where module is active
     -- }
 })
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

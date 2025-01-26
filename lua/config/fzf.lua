@@ -17,7 +17,7 @@ require'fzf-lua'.setup {
 }
 
 -- Keybinding
-vim.keymap.set('n', '<leader>e', function() require('fzf-lua').files() end)
+-- vim.keymap.set('n', '<leader>e', function() require('fzf-lua').files() end)
 vim.keymap.set('n', '<leader>gb',
                function() require('fzf-lua').git_branches() end)
 -- vim.keymap.set('n', '<c-e>', function() require('fzf-lua').buffers() end)

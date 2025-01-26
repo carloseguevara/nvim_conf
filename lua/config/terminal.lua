@@ -1,10 +1,8 @@
 -- Source: https://github.com/akinsho/toggleterm.nvim
 local packer = require 'packer'
 local use = packer.use
-
 -- Plugins
 use 'akinsho/toggleterm.nvim'
-
 -- Configurations
 require('toggleterm').setup({
     size = function(term)
@@ -15,10 +13,10 @@ require('toggleterm').setup({
         end
     end,
     direction = "horizontal",
-    open_mapping = [[<c-\>]],
+    -- open_mapping = [[<c-\>]],
+    open_mapping = [[<F12>]],
     close_on_exit = false
 })
-
 vim.api.nvim_set_keymap('n', '<leader>tv', ':ToggleTerm direction=vertical<CR>',
                         {noremap = true, silent = true, expr = false})
 vim.api.nvim_set_keymap('n', '<leader>th',
@@ -28,4 +26,3 @@ vim.api.nvim_set_keymap('n', '<leader>tl', ':ToggleTermSendCurrentLine<CR>',
                         {noremap = true, silent = true, expr = false})
 vim.api.nvim_set_keymap('v', '<leader>tl', ':ToggleTermSendVisualLines<CR>',
                         {noremap = true, silent = true, expr = false})
-

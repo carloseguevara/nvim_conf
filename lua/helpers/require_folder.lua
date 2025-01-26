@@ -1,7 +1,6 @@
 local RequireFolder = {}
 
 function RequireFolder.set(path)
-    print(path)
     local pfile = io.popen('ls -a ~/.config/nvim/lua/' .. path)
     local i = 0
     for filename in pfile:lines() do
